@@ -6,3 +6,12 @@ class WeatherData:
 
     def __str__(self):
         return f"{self.name}, {self.country} {self.temp} °C"
+
+    def get_name(self):
+        return self.name
+
+    def get_temp(self):
+        return self.temp
+
+    def get_country(self):
+        return self.country

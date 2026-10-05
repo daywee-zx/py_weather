@@ -18,7 +18,7 @@ def get(name, timeout):
 
         return weather.WeatherData(
             name,
-            data["current_condition"][0]["temp_C"],
+            int(data["current_condition"][0]["temp_C"]),
             data["nearest_area"][0]["country"][0]["value"]
         )
 
