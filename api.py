@@ -4,8 +4,7 @@ import weather
 import json
 
 def get(name, timeout):
-    # had to swith to j2 due to server-side issues.
-    url = f"https://wttr.in/{name}?format=j2"
+    url = f"https://wttr.in/{name}?format=j1"
 
     req = urllib.request.Request(url, headers={
         "User-Agent": "curl/8",
@@ -14,7 +13,7 @@ def get(name, timeout):
     })
 
     with urllib.request.urlopen(req, timeout=timeout) as r:
-        data = json.loads(r.read())
+        data = json.load(r)
 
         return weather.WeatherData(
             name,

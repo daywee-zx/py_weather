@@ -23,6 +23,7 @@ async def main():
             countries[country].add_city(data)
             print(data)
 
+    print("\n\nWeather by country:\n")
     for c in countries.values():
         print(c)
     
